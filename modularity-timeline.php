@@ -33,5 +33,16 @@ $loader->addPrefix('ModularityTimeline', MODULARITYTIMELINE_PATH);
 $loader->addPrefix('ModularityTimeline', MODULARITYTIMELINE_PATH . 'source/php/');
 $loader->register();
 
+// Acf auto import and export
+add_action('plugins_loaded', function () {
+    $acfExportManager = new \AcfExportManager\AcfExportManager();
+    $acfExportManager->setTextdomain('modularity-timeline');
+    $acfExportManager->setExportFolder(MODULARITYTIMELINE_PATH . 'acf-fields/');
+    $acfExportManager->autoExport(array(
+    	'timeline' => 'group_59ede2f88a7b5'
+    ));
+    $acfExportManager->import();
+});
+
 // Start application
 new ModularityTimeline\App();
