@@ -3,6 +3,31 @@
     "title": "Timeline",
     "fields": [
         {
+            "key": "field_59ede644f0d68",
+            "label": "Date format",
+            "name": "timeline_date_format",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "dmy": "Day Month Year",
+                "dm": "Day Month",
+                "y": "Year"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "dmy:Day-Month-Year",
+            "layout": "vertical",
+            "return_format": "value"
+        },
+        {
             "key": "field_59ede30ef0d63",
             "label": "Timeline events",
             "name": "timeline_events",
@@ -77,31 +102,6 @@
                     "first_day": 1
                 },
                 {
-                    "key": "field_59ede644f0d68",
-                    "label": "Date format",
-                    "name": "date_format",
-                    "type": "radio",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "DD-MM-YYYY": "DD-MM-YYYY",
-                        "MM-YYYY": "MM-YYYY",
-                        "YYYY": "YYYY"
-                    },
-                    "allow_null": 0,
-                    "other_choice": 0,
-                    "save_other_choice": 0,
-                    "default_value": "DD-MM-YYYY",
-                    "layout": "vertical",
-                    "return_format": "value"
-                },
-                {
                     "key": "field_59ede561f0d67",
                     "label": "Image",
                     "name": "image",
@@ -110,7 +110,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -119,6 +119,30 @@
                     "min_size": "",
                     "max_size": "",
                     "mime_types": ""
+                },
+                {
+                    "key": "field_59f06fc81c692",
+                    "label": "Image position",
+                    "name": "image_position",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "top": "Top",
+                        "side": "Side"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "top : Top",
+                    "layout": "vertical",
+                    "return_format": "value"
                 }
             ]
         }
