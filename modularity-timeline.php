@@ -42,7 +42,9 @@ add_action('plugins_loaded', function () {
     	'timeline' => 'group_59ede2f88a7b5'
     ));
     $acfExportManager->import();
-});
 
-// Start application
-new ModularityTimeline\App();
+    modularity_register_module(
+        MODULARITYTIMELINE_PATH . 'source/php/', // The directory path of the module
+        'Module' // The class' file and class name (should be the same) withot .php extension
+    );
+});
