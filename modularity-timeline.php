@@ -2,11 +2,11 @@
 
 /**
  * Plugin Name:       Modularity Timeline
- * Plugin URI:        (#plugin_url#)
+ * Plugin URI:        https://github.com/helsingborg-stad/modularity-timeline.git
  * Description:       A module to display a timeline.
  * Version:           1.0.0
  * Author:            Jonatan Hanson
- * Author URI:        (#plugin_author_url#)
+ * Author URI:        https://github.com/helsingborg-stad
  * License:           MIT
  * License URI:       https://opensource.org/licenses/MIT
  * Text Domain:       modularity-timeline
