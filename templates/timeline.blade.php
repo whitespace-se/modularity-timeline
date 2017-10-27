@@ -14,10 +14,10 @@
 			            	{!! \ModularityTimeline\Module::timelineDate($ID, $event['date']) !!}
 						</div>
 		            </div>
-		            <div class="timeline-content">
+		            <div class="timeline-content timeline-{{ $event['image_position'] }}">
 						<div class="grid">
 							@if(!empty($event['image']['ID']))
-								<div class="{{ $event['image_grid'] }} timeline-{{ $event['image_position'] }}">
+								<div class="{{ $event['image_grid'] }}">
 									{!! $event['image_markup'] !!}
 		                		</div>
 		                	@endif
