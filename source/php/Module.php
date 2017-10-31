@@ -15,6 +15,8 @@ class Module extends \Modularity\Module
         $this->nameSingular = __('Timeline', 'modularity');
         $this->namePlural = __('Timelines', 'modularity');
         $this->description = __('Display a timeline', 'modularity');
+
+        add_filter('Modularity/Module/Container/Modules', array($this, 'ContainerSupport'));
     }
 
     public function data() : array
@@ -54,6 +56,17 @@ class Module extends \Modularity\Module
         }
 
         return $date;
+    }
+
+    /**
+     * Add container wrapper to module
+     * @param  array $modules Default list of modules
+     * @return array          Modified list of modules
+     */
+    public function ContainerSupport($modules)
+    {
+        $modules[] = $this->moduleSlug;
+        return $modules;
     }
 
     /**
