@@ -41,23 +41,6 @@ class Module extends \Modularity\Module
         return $data;
     }
 
-    public static function timelineImage($id, $date) : string {
-        $format = get_field('timeline_date_format', $id);
-        switch ($format) {
-            case 'dm':
-                $date = '<span>' . mysql2date('d M', $date, true) . '</span>';
-                break;
-            case 'y':
-                $date = '<span>' . mysql2date('Y', $date, true) . '</span>';
-                break;
-            default:
-                $date = '<span>' . mysql2date('d M', $date, true) . '</span> ' . '<span>' . mysql2date('Y', $date, true) . '</span>';
-                break;
-        }
-
-        return $date;
-    }
-
     /**
      * Add container wrapper to module
      * @param  array $modules Default list of modules
