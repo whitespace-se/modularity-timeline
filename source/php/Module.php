@@ -21,7 +21,7 @@ class Module extends \Modularity\Module
 
     public function data() : array
     {
-        $data['classes'] = implode(' ', apply_filters('Modularity/Module/Classes', array('box', 'box-panel'), $this->post_type, $this->args));
+        $data['classes'] = implode(' ', apply_filters('Modularity/Module/Classes', array(), $this->post_type, $this->args));
         $events = is_array(get_field('timeline_events', $this->ID)) ? get_field('timeline_events', $this->ID) : array();
         foreach ($events as &$event) {
             $event['image_grid']   = 'grid-md-12';
