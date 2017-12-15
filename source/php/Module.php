@@ -15,13 +15,14 @@ class Module extends \Modularity\Module
         $this->nameSingular = __('Timeline', 'modularity');
         $this->namePlural = __('Timelines', 'modularity');
         $this->description = __('Display a timeline', 'modularity');
-
-        add_filter('Modularity/Module/Container/Modules', array($this, 'ContainerSupport'));
     }
 
     public function data() : array
     {
-        $data['classes'] = implode(' ', apply_filters('Modularity/Module/Classes', array(), $this->post_type, $this->args));
+        $data['classes'] = implode(' ', apply_filters('Modularity/Module/Classes', array('box', 'box-panel'), $this->post_type, $this->args));
+        $data['attributes'] = implode(' ', apply_filters('Modularity/Module/Attributes', array(), $this->post_type, $this->args));
+
+
         $events = is_array(get_field('timeline_events', $this->ID)) ? get_field('timeline_events', $this->ID) : array();
         foreach ($events as &$event) {
             $event['image_grid']   = 'grid-md-12';
@@ -41,15 +42,21 @@ class Module extends \Modularity\Module
         return $data;
     }
 
-    /**
-     * Add container wrapper to module
-     * @param  array $modules Default list of modules
-     * @return array          Modified list of modules
-     */
-    public function ContainerSupport($modules)
-    {
-        $modules[] = $this->moduleSlug;
-        return $modules;
+    public static function timelineImage($id, $date) : string {
+        $format = get_field('timeline_date_format', $id);
+        switch ($format) {
+            case 'dm':
+                $date = '<span>' . mysql2date('d M', $date, true) . '</span>';
+                break;
+            case 'y':
+                $date = '<span>' . mysql2date('Y', $date, true) . '</span>';
+                break;
+            default:
+                $date = '<span>' . mysql2date('d M', $date, true) . '</span> ' . '<span>' . mysql2date('Y', $date, true) . '</span>';
+                break;
+        }
+
+        return $date;
     }
 
     /**
