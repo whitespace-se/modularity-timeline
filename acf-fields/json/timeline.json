@@ -85,6 +85,25 @@
                     "new_lines": "wpautop"
                 },
                 {
+                    "key": "field_5a44b698607e2",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "text",
+                    "instructions": "Add a link to this event",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
                     "key": "field_59ede49df0d66",
                     "label": "Date",
                     "name": "date",

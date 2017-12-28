@@ -51,7 +51,7 @@
             'sub_fields' => array(
                 0 => array(
                     'key' => 'field_59ede46ef0d64',
-                    'label' => __(__(__(__(__(__(__(__('Title', 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'),
+                    'label' => __('Title', 'modularity-timeline'),
                     'name' => 'title',
                     'type' => 'text',
                     'instructions' => '',
@@ -70,7 +70,7 @@
                 ),
                 1 => array(
                     'key' => 'field_59ede485f0d65',
-                    'label' => __(__(__(__(__(__(__(__('Content', 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'),
+                    'label' => __('Content', 'modularity-timeline'),
                     'name' => 'content',
                     'type' => 'textarea',
                     'instructions' => '',
@@ -88,8 +88,27 @@
                     'new_lines' => 'wpautop',
                 ),
                 2 => array(
+                    'key' => 'field_5a44b698607e2',
+                    'label' => __('Link', 'modularity-timeline'),
+                    'name' => 'link',
+                    'type' => 'text',
+                    'instructions' => __('Add a link to this event', 'modularity-timeline'),
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
+                    'maxlength' => '',
+                ),
+                3 => array(
                     'key' => 'field_59ede49df0d66',
-                    'label' => __(__(__(__(__(__(__(__('Date', 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'),
+                    'label' => __('Date', 'modularity-timeline'),
                     'name' => 'date',
                     'type' => 'date_picker',
                     'instructions' => '',
@@ -104,9 +123,9 @@
                     'return_format' => 'Y-m-d',
                     'first_day' => 1,
                 ),
-                3 => array(
+                4 => array(
                     'key' => 'field_59ede561f0d67',
-                    'label' => __(__(__(__(__(__(__(__('Image', 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'),
+                    'label' => __('Image', 'modularity-timeline'),
                     'name' => 'image',
                     'type' => 'file',
                     'instructions' => '',
@@ -123,9 +142,9 @@
                     'max_size' => '',
                     'mime_types' => '',
                 ),
-                4 => array(
+                5 => array(
                     'key' => 'field_59f06fc81c692',
-                    'label' => __(__(__(__(__(__(__(__('Image position', 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'),
+                    'label' => __('Image position', 'modularity-timeline'),
                     'name' => 'image_position',
                     'type' => 'radio',
                     'instructions' => '',
@@ -137,8 +156,8 @@
                         'id' => '',
                     ),
                     'choices' => array(
-                        'top' => __(__(__(__(__(__(__(__('Top', 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'),
-                        'side' => __(__(__(__(__(__(__(__('Side', 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'), 'modularity-timeline'),
+                        'top' => __('Top', 'modularity-timeline'),
+                        'side' => __('Side', 'modularity-timeline'),
                     ),
                     'allow_null' => 0,
                     'other_choice' => 0,
