@@ -19,7 +19,7 @@ class Module extends \Modularity\Module
 
     public function data() : array
     {
-        $data['classes'] = implode(' ', apply_filters('Modularity/Module/Classes', array('box', 'box-panel'), $this->post_type, $this->args));
+        $data['classes'] = implode(' ', apply_filters('Modularity/Module/Classes', array('container'), $this->post_type, $this->args));
         $data['attributes'] = implode(' ', apply_filters('Modularity/Module/Attributes', array(), $this->post_type, $this->args));
 
 
