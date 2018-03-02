@@ -1,8 +1,8 @@
 <div class="{{ $classes }}" {!! $attributes  !!}>
     @if (!$hideTitle && !empty($post_title))
-    <h4>{!! apply_filters('the_title', $post_title) !!}</h4>
+    <h4 class="box-title">{!! apply_filters('the_title', $post_title) !!}</h4>
     @endif
-
+    <div class="box-content">
 	    <ul class="timeline">
 	    	@foreach($events as $event)
 		        <li class="timeline__event">
@@ -35,4 +35,5 @@
 		        </li>
 	        @endforeach
 	    </ul>
+    </div>
 </div>
