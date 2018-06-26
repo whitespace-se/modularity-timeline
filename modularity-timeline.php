@@ -13,8 +13,8 @@
  * Domain Path:       /languages
  */
 
- // Protect agains direct file access
-if (! defined('WPINC')) {
+// Protect agains direct file access
+if (!defined('WPINC')) {
     die;
 }
 
@@ -39,12 +39,14 @@ add_action('plugins_loaded', function () {
     $acfExportManager->setTextdomain('modularity-timeline');
     $acfExportManager->setExportFolder(MODULARITYTIMELINE_PATH . 'acf-fields/');
     $acfExportManager->autoExport(array(
-    	'timeline' => 'group_59ede2f88a7b5'
+        'timeline' => 'group_59ede2f88a7b5'
     ));
     $acfExportManager->import();
 
-    modularity_register_module(
-        MODULARITYTIMELINE_PATH . 'source/php/', // The directory path of the module
-        'Module' // The class' file and class name (should be the same) withot .php extension
-    );
+    if (function_exists('modularity_register_module')) {
+        modularity_register_module(
+            MODULARITYTIMELINE_PATH . 'source/php/', // The directory path of the module
+            'Module' // The class' file and class name (should be the same) withot .php extension
+        );
+    }
 });
