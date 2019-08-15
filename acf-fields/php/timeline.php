@@ -6,13 +6,40 @@
     'title' => __('Timeline', 'modularity-timeline'),
     'fields' => array(
         0 => array(
+            'key' => 'field_5d5416b7f92ed',
+            'label' => __('format', 'modularity-timeline'),
+            'name' => 'timeline_format',
+            'type' => 'true_false',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'message' => __('Show time instead of date', 'modularity-timeline'),
+            'default_value' => 0,
+            'ui' => 0,
+            'ui_on_text' => __('Date format', 'modularity-timeline'),
+            'ui_off_text' => __('Timestamp format', 'modularity-timeline'),
+        ),
+        1 => array(
             'key' => 'field_59ede644f0d68',
             'label' => __('Date format', 'modularity-timeline'),
             'name' => 'timeline_date_format',
             'type' => 'radio',
             'instructions' => '',
             'required' => 1,
-            'conditional_logic' => 0,
+            'conditional_logic' => array(
+                0 => array(
+                    0 => array(
+                        'field' => 'field_5d5416b7f92ed',
+                        'operator' => '!=',
+                        'value' => '1',
+                    ),
+                ),
+            ),
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
@@ -30,9 +57,40 @@
             'layout' => 'vertical',
             'return_format' => 'value',
         ),
-        1 => array(
+        2 => array(
+            'key' => 'field_5d5417466c393',
+            'label' => __('Timestamp format', 'modularity-timeline'),
+            'name' => 'timeline_timestamp_format',
+            'type' => 'radio',
+            'instructions' => '',
+            'required' => 1,
+            'conditional_logic' => array(
+                0 => array(
+                    0 => array(
+                        'field' => 'field_5d5416b7f92ed',
+                        'operator' => '==',
+                        'value' => '1',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'choices' => array(
+                'Hi' => __('Hour minutes', 'modularity-timeline'),
+            ),
+            'allow_null' => 0,
+            'other_choice' => 0,
+            'save_other_choice' => 0,
+            'default_value' => 'Hi:Hour-minutes',
+            'layout' => 'vertical',
+            'return_format' => 'value',
+        ),
+        3 => array(
             'key' => 'field_59ede30ef0d63',
-            'label' => __('Timeline events', 'modularity-timeline'),
+            'label' => __('Tidslinjehändelser', 'modularity-timeline'),
             'name' => 'timeline_events',
             'type' => 'repeater',
             'instructions' => '',
@@ -113,7 +171,15 @@
                     'type' => 'date_picker',
                     'instructions' => '',
                     'required' => 1,
-                    'conditional_logic' => 0,
+                    'conditional_logic' => array(
+                        0 => array(
+                            0 => array(
+                                'field' => 'field_5d5416b7f92ed',
+                                'operator' => '!=',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
                     'wrapper' => array(
                         'width' => '',
                         'class' => '',
@@ -124,6 +190,30 @@
                     'first_day' => 1,
                 ),
                 4 => array(
+                    'key' => 'field_5d5414c0677aa',
+                    'label' => __('Timestamp', 'modularity-timeline'),
+                    'name' => 'timestamp',
+                    'type' => 'time_picker',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => array(
+                        0 => array(
+                            0 => array(
+                                'field' => 'field_5d5416b7f92ed',
+                                'operator' => '==',
+                                'value' => '1',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'display_format' => 'H:i:s',
+                    'return_format' => 'H:i:s',
+                ),
+                5 => array(
                     'key' => 'field_59ede561f0d67',
                     'label' => __('Image', 'modularity-timeline'),
                     'name' => 'image',
@@ -142,7 +232,7 @@
                     'max_size' => '',
                     'mime_types' => '',
                 ),
-                5 => array(
+                6 => array(
                     'key' => 'field_59f06fc81c692',
                     'label' => __('Image position', 'modularity-timeline'),
                     'name' => 'image_position',

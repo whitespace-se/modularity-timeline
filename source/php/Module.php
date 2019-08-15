@@ -24,10 +24,11 @@ class Module extends \Modularity\Module
 
 
         $events = is_array(get_field('timeline_events', $this->ID)) ? get_field('timeline_events', $this->ID) : array();
+
         foreach ($events as &$event) {
             $event['image_grid']   = 'grid-md-12';
             $event['content_grid'] = 'grid-md-12';
-
+            $event['format'] = get_field('timeline_format', $this->ID);
             if (!empty($event['image'])) {
                 if (!empty($event['image_position']) && $event['image_position'] == 'side') {
                     $event['image_markup'] = wp_get_attachment_image($event['image']['ID'], 'medium');
@@ -38,25 +39,9 @@ class Module extends \Modularity\Module
                 }
             }
         }
+
         $data['events'] = $events;
         return $data;
-    }
-
-    public static function timelineImage($id, $date) : string {
-        $format = get_field('timeline_date_format', $id);
-        switch ($format) {
-            case 'dm':
-                $date = '<span>' . mysql2date('d M', $date, true) . '</span>';
-                break;
-            case 'y':
-                $date = '<span>' . mysql2date('Y', $date, true) . '</span>';
-                break;
-            default:
-                $date = '<span>' . mysql2date('d M', $date, true) . '</span> ' . '<span>' . mysql2date('Y', $date, true) . '</span>';
-                break;
-        }
-
-        return $date;
     }
 
     /**
@@ -66,20 +51,26 @@ class Module extends \Modularity\Module
      * @return string
      */
     public static function timelineDate($id, $date) : string {
-        $format = get_field('timeline_date_format', $id);
-        switch ($format) {
-            case 'dm':
-                $date = '<span>' . mysql2date('d M', $date, true) . '</span>';
-                break;
-            case 'y':
-                $date = '<span>' . mysql2date('Y', $date, true) . '</span>';
-                break;
-            default:
-                $date = '<span>' . mysql2date('d M', $date, true) . '</span> ' . '<span>' . mysql2date('Y', $date, true) . '</span>';
-                break;
+        if (!get_field('timeline_format', $id)) {
+            $format = get_field('timeline_date_format', $id);
+            switch ($format) {
+                case 'dm':
+                    $date = '<span>' . mysql2date('d M', $date, true) . '</span>';
+                    break;
+                case 'y':
+                    $date = '<span>' . mysql2date('Y', $date, true) . '</span>';
+                    break;
+                default:
+                    $date = '<span>' . mysql2date('d M', $date, true) . '</span> ' . '<span>' . mysql2date('Y', $date, true) . '</span>';
+                    break;
+            }
+            return $date;
+
+        } else {
+
+            return '<span>' .$date . '</span>';
         }
 
-        return $date;
     }
 
     /**

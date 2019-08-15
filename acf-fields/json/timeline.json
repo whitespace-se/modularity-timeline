@@ -3,13 +3,40 @@
     "title": "Timeline",
     "fields": [
         {
+            "key": "field_5d5416b7f92ed",
+            "label": "format",
+            "name": "timeline_format",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Show time instead of date",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "Date format",
+            "ui_off_text": "Timestamp format"
+        },
+        {
             "key": "field_59ede644f0d68",
             "label": "Date format",
             "name": "timeline_date_format",
             "type": "radio",
             "instructions": "",
             "required": 1,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d5416b7f92ed",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -28,8 +55,39 @@
             "return_format": "value"
         },
         {
+            "key": "field_5d5417466c393",
+            "label": "Timestamp format",
+            "name": "timeline_timestamp_format",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5d5416b7f92ed",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Hi": "Hour minutes"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "Hi:Hour-minutes",
+            "layout": "vertical",
+            "return_format": "value"
+        },
+        {
             "key": "field_59ede30ef0d63",
-            "label": "Timeline events",
+            "label": "Tidslinjeh\u00e4ndelser",
             "name": "timeline_events",
             "type": "repeater",
             "instructions": "",
@@ -110,7 +168,15 @@
                     "type": "date_picker",
                     "instructions": "",
                     "required": 1,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d5416b7f92ed",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -119,6 +185,30 @@
                     "display_format": "Y-m-d",
                     "return_format": "Y-m-d",
                     "first_day": 1
+                },
+                {
+                    "key": "field_5d5414c0677aa",
+                    "label": "Timestamp",
+                    "name": "timestamp",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5d5416b7f92ed",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i:s",
+                    "return_format": "H:i:s"
                 },
                 {
                     "key": "field_59ede561f0d67",
