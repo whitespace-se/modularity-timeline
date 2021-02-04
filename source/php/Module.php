@@ -57,8 +57,17 @@ class Module extends \Modularity\Module
                 case 'dm':
                     $date = '<span>' . mysql2date('d M', $date, true) . '</span>';
                     break;
+                case 'my':
+                    $date = '<span>' . mysql2date('M Y', $date, true) . '</span>';
+                    break;
                 case 'y':
                     $date = '<span>' . mysql2date('Y', $date, true) . '</span>';
+                    break;
+                case 'm':
+                    $date = '<span>' . mysql2date('M', $date, true) . '</span>';
+                    break;
+                case 'd':
+                    $date = '<span>' . mysql2date('d', $date, true) . '</span>';
                     break;
                 default:
                     $date = '<span>' . mysql2date('d M', $date, true) . '</span> ' . '<span>' . mysql2date('Y', $date, true) . '</span>';

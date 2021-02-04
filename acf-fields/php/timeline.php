@@ -48,7 +48,10 @@
             'choices' => array(
                 'dmy' => __('Day Month Year', 'modularity-timeline'),
                 'dm' => __('Day Month', 'modularity-timeline'),
+                'my' => __('Month Year', 'modularity-timeline'),
                 'y' => __('Year', 'modularity-timeline'),
+                'm' => __('Month', 'modularity-timeline'),
+                'd' => __('Day', 'modularity-timeline'),
             ),
             'allow_null' => 0,
             'other_choice' => 0,

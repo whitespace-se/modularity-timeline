@@ -45,7 +45,10 @@
             "choices": {
                 "dmy": "Day Month Year",
                 "dm": "Day Month",
-                "y": "Year"
+                "my": "Month Year",
+                "y": "Year",
+                "m": "Month",
+                "d": "Day"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -274,4 +277,4 @@
     "active": 1,
     "description": ""
 }]
-
+
