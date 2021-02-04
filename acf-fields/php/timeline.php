@@ -93,7 +93,7 @@
         ),
         3 => array(
             'key' => 'field_59ede30ef0d63',
-            'label' => __('Tidslinjehändelser', 'modularity-timeline'),
+            'label' => __('Timeline events', 'modularity-timeline'),
             'name' => 'timeline_events',
             'type' => 'repeater',
             'instructions' => '',
